@@ -33,6 +33,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// ページが読み込まれた後に実行されるコード
+document.addEventListener('DOMContentLoaded', function () {
+  // ロゴをクリックしたときの処理
+  const logoLink = document.querySelector('.logo a');
+  if (logoLink) {
+      logoLink.addEventListener('click', function (event) {
+          event.preventDefault(); // デフォルトのクリック動作をキャンセル
+
+          // ページのトップまでスクロール
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // スムーススクロールを有効にする
+          });
+      });
+  }
+});
+
 // ハンバーガーメニュー
 $('.hamburger').on('click', function() {
     if ($('#header').hasClass('open')) {
