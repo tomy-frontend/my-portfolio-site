@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+// レスポンシブブレイクポイント
+// タブレット向けメディアクエリのMixin
+@mixin tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  
+  // スマートフォン向けメディアクエリのMixin
+  @mixin sp {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+#about {
+    margin-bottom: 14.27rem;
+    @include sp {
+        margin-bottom: 0;
+    }
+    .l_about_flex {
+        display: flex;
+        padding: 1.25rem 1.875rem;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 5.1875rem 3.3125rem;
+        flex-wrap: wrap;
+        @include sp {
+            flex-direction: column;
+        }
+        .l_about-image {
+            max-width: 27.35188rem;
+            height: auto;
+            flex-shrink: 0;
+            z-index: -9999;
+            img {
+                width: 100%;
+                vertical-align: auto;
+            }
+        }
+        .l_about-description {
+            display: flex;
+            flex-direction: column;
+            max-width: 29.25444rem;
+            height: auto;
+            margin-top: 5rem;
+            @include tablet {
+                margin-top: 0;
+            }
+            .l_about-description-name {
+                color: #000;
+                font-family: Inter;
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.125rem;
+            }
+            p {
+                color: #000;
+                font-family: Inter;
+                font-size: 1rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; /* 1.5rem */
+                letter-spacing: 0.1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
+#strength {
+    margin-bottom: 12.5rem;
+    .l_strength_cards {
+        display: flex;
+        flex-direction: column;
+        max-width: 51.5625rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3.9375rem;
+        margin: 0 auto;
+        @include sp {
+            pad: 0 1rem;
+            width: 100%;
+        }
+        .l_strength_card {
+            max-width: 44.8125rem;
+            display: flex;
+            gap: 2rem;
+            margin: 0 auto;
+            box-sizing: border-box;
+            @include sp {
+                gap: 1rem;
+                width: 100%;
+                height: auto;
+                padding: 0 1rem;
+                flex-direction: column;
+            }
+            .l_strength_card_img {
+                max-width: 13.3125rem;
+                height: auto;
+                flex-shrink: 0;
+                border-radius: 3.125rem;
+                @include sp {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            .l_strength_card_description {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                .l_strength_card_title {
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 1.5rem;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    letter-spacing: 0.18rem;
+                    margin-bottom: 1rem;
+                    @include sp {
+                        font-size: 1rem;
+                    }
+                }
+                p {
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 1rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%; /* 1.5rem */
+                    @include sp {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#timeline {
+    .timeline {
+        width: 96%;
+        max-width: 940px;
+        margin: 28px auto;
+        
+        &-list {
+            padding: 40px 0;
+            
+            &-item {
+                display: flex;
+                line-height: 1.5;
+                font-size: 1rem;
+                
+                .date {
+                    width: 20%;
+                    padding: 0 0 0 20px;
+                    color: #888888;
+                    font-weight: bold;
+                }
+                
+                .content {
+                    position: relative;
+                    width: 80%;
+                    padding: 0 20px 60px 30px;
+                    border-left: 1px solid #ECF2FF;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: -10px; //widthの半分の値を指定
+                        width: 20px;
+                        height: 20px;
+                        background-color: #ECF2FF;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
