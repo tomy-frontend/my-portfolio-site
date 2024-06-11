@@ -3,6 +3,6 @@
 
 全てはここから始まりました。
 
-サイトはこちらから確認いただけます。
+こちらからサイトを確認いただけます。
 
 https://tomy-web-coordinator.github.io/my-portfolio-site/
